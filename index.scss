@@ -41,7 +41,7 @@
   .logo_block {
     cursor: pointer;
     .nav_logo {
-      .logo_img {
+      .logo {
         width: 177px;
         @media screen and (max-width: 1440px) {
           width: 118px;
@@ -81,12 +81,12 @@
   }
   .contact_btn {
     .nav_btn {
-      color: #fff;
+      color: #000;
       cursor: pointer;
       padding: 16px 24px;
       border-radius: 10px;
       border: 1px solid var(--grey-20, #333);
-      background: rgba(36, 36, 36, 0.2);
+      background: var(--green-50, #9eff00);
       backdrop-filter: blur(6px);
       font-size: 18px;
       transition: 0.4s ease-in-out;
@@ -99,8 +99,7 @@
         }
       }
       &:hover {
-        color: #000;
-        background: var(--green-50, #9eff00);
+        background: #b1ff33;
       }
     }
     .icon_btn {
@@ -236,7 +235,7 @@
         border-radius: 10px;
         font-weight: 500;
         border: 1px solid var(--grey-20, #333);
-        background: rgba(36, 36, 36, 0.2);
+        background: #24242433;
         backdrop-filter: blur(6px);
         transition: 0.4s ease-in-out;
         @media screen and (max-width: 1440px) {
@@ -244,8 +243,7 @@
           padding: 14px 20px;
         }
         &:hover {
-          color: #1a1a1a;
-          background: var(--green-50, #9eff00);
+          background: #262626;
         }
       }
       .container_btn_setActive {
@@ -261,8 +259,7 @@
           font-size: 14px;
         }
         &:hover {
-          color: #fff;
-          background: rgba(36, 36, 36, 0.2);
+          background: #b1ff33;
         }
       }
     }
@@ -283,16 +280,21 @@
     }
   }
 
-  // ! HERO-SECTION
+  //   HERO-SECTION
 
   .companys {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
     border-top: 1px solid #333;
     padding: 40px 0;
     @media screen and (max-width: 1440px) {
       padding: 30px 0;
+      @media screen and (max-width: 425px) {
+        gap: 40px;
+        padding: 20px 16px;
+      }
     }
     .companys_top_text {
       position: absolute;
@@ -300,8 +302,9 @@
       left: 41%;
       @media screen and (max-width: 1440px) {
         top: 810px;
-        @media screen and(max-width: 425px) {
-          top: 10;
+        @media screen and (max-width: 425px) {
+          left: 22%;
+          top: 578px;
         }
       }
       .top_text {
@@ -314,25 +317,347 @@
         @media screen and (max-width: 1440px) {
           padding: 14px 24px;
           font-size: 14px;
+        }
+      }
+    }
+    .companys_block {
+      padding: 20px 40px;
+      @media screen and (max-width: 1440px) {
+        padding: 16px 30px;
+        @media screen and (max-width: 425px) {
+          padding: 30px;
+        }
+      }
+    }
+    .companys_img {
+      width: 138.542px;
+      height: auto;
+      @media screen and (max-width: 1440px) {
+        width: 110.833px;
+        height: auto;
+        @media screen and (max-width: 425px) {
+          width: 80px;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  // ! COMPANIYS
+
+  .our_service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(172, 255, 36, 0.2) 0%,
+        rgba(172, 255, 36, 0.2) 100%
+      ),
+      url(<path-to-image>), lightgray 0% 0% / 100px 100px repeat,
+      url(<path-to-image>), lightgray 50% / cover no-repeat;
+    background-blend-mode: color, normal, overlay;
+
+    .text_conteiner_content {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      padding: 120px 300px;
+      background-image: url("./images/Text Container.svg");
+      background-repeat: no-repeat;
+      @media screen and (max-width: 1440px) {
+        width: 1280px;
+        padding: 100px 250px;
+        gap: 10px;
+        @media screen and (max-width: 425px) {
+          width: 100%;
+          padding: 50px 16px;
+          gap: 6px;
+        }
+      }
+      .page_name {
+        color: #fff;
+        font-size: 48px;
+        background: transparent;
+        @media screen and (max-width: 1440px) {
+          font-size: 38px;
+          @media screen and (max-width: 425px) {
+            font-size: 28px;
+          }
+        }
+      }
+      .page_text {
+        color: #fff;
+        font-size: 18px;
+        background: transparent;
+        @media screen and (max-width: 1440px) {
+          font-size: 16px;
           @media screen and (max-width: 425px) {
             font-size: 14px;
           }
         }
       }
     }
-    .companys_block {
+    .our_services_card_row {
       display: flex;
-      align-items: center;
-      padding: 20px 40px;
-      @media screen and (max-width: 1440px) {
-        padding: 16px 30px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      @media screen and (max-width: 425px) {
+        flex-direction: column;
       }
-      .companys_img {
-        width: 138.542px;
+      .our_service_card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 532px;
+        height: 557px;
         height: auto;
+        padding: 50px;
+        border-right: 0.5px solid #333;
+        border-left: 0.5px solid #333;
         @media screen and (max-width: 1440px) {
-          width: 110.833px;
-          height: auto;
+          width: 426px;
+          padding: 40px;
+          gap: 14px;
+          @media screen and (max-width: 425px) {
+            gap: 24px;
+            width: 100%;
+            padding: 30px;
+            border-top: 0.5px solid #333;
+            border-right: 0.5px solid #333;
+            border-left: 0.5px solid #333;
+          }
+        }
+        .block_image_title {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+          @media screen and (max-width: 1440px) {
+            gap: 30px;
+            @media screen and (max-width: 425px) {
+              flex-direction: row;
+              align-items: center;
+              gap: 14px;
+            }
+          }
+          .card_image {
+            width: 88px;
+            padding: 24px;
+            border-radius: 6px;
+            border: 1px solid #2e2e2e;
+            background: linear-gradient(
+                229deg,
+                rgba(158, 255, 0, 0.2) -68.25%,
+                rgba(158, 255, 0, 0) 32.16%
+              ),
+              linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0) 100%);
+            @media screen and (max-width: 1440px) {
+              width: 70px;
+              padding: 20px;
+              @media screen and (max-width: 425px) {
+              }
+            }
+            .card_img {
+              background: transparent;
+              @media screen and (max-width: 1440px) {
+                width: 30px;
+                height: auto;
+                @media screen and (max-width: 425px) {
+                  width: 24px;
+                  height: auto;
+                }
+              }
+            }
+          }
+          .card_title {
+            color: #fff;
+            font-size: 30px;
+            letter-spacing: -0.18px;
+            @media screen and (max-width: 1440px) {
+              font-size: 24px;
+            }
+          }
+        }
+        .card_content {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .card_text {
+            color: #fff;
+            font-size: 18px;
+            letter-spacing: -0.108px;
+            @media screen and (max-width: 1440px) {
+              font-size: 16px;
+              @media screen and (max-width: 425px) {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+        .card_btn {
+          color: #fff;
+          margin: 80px 0 0;
+          padding: 18px 16px;
+          font-size: 18px;
+          letter-spacing: -0.108px;
+          border: 1px solid #333;
+          border-radius: 8px;
+          background: var(--grey-15, #262626);
+          @media screen and (max-width: 1440px) {
+            margin: 60px 0 0;
+            font-size: 14px;
+            @media screen and (max-width: 425px) {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // ! OUR-SERVICES
+
+  .why_choose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .choose_top_content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      gap: 14px;
+      width: 1597px;
+      height: 336px;
+      padding: 120px 300px;
+      background: transparent;
+      background-repeat: no-repeat;
+      background-image: url("./images/Whe choose Us bg.png");
+      @media screen and (max-width: 1440px) {
+        width: 1279px;
+        height: 304px;
+        padding: 100px 250px;
+        gap: 10px;
+        @media screen and (max-width: 425px) {
+          width: 393px;
+          padding: 50px 16px;
+          gap: 6px;
+        }
+      }
+      .choose_title {
+        color: #fff;
+        font-size: 48px;
+        background: transparent;
+        @media screen and (max-width: 1440px) {
+          font-size: 38px;
+          @media screen and (max-width: 425px) {
+            font-size: 28px;
+          }
+        }
+      }
+      .choose_text {
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        background: transparent;
+        @media screen and (max-width: 1440px) {
+          font-size: 16px;
+          @media screen and (max-width: 425px) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .choose_card_row {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      .choose_card {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        width: 797px;
+        height: auto;
+        padding: 80px;
+        border-top: 0.5px solid #333;
+        border-right: 0.5px solid #333;
+        border-left: 0.5px solid #333;
+        @media screen and (max-width: 1440px) {
+          width: 639px;
+          padding: 60px;
+          gap: 20px;
+          @media screen and (max-width: 425px) {
+            width: 393px;
+            padding: 40px 30px;
+            gap: 24px;
+          }
+        }
+        .choose_card__title_image_block {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+          @media screen and (max-width: 1440px) {
+            gap: 14px;
+          }
+          .choose_image {
+            width: 90px;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid #2e2e2e;
+            background: linear-gradient(
+                229deg,
+                rgba(158, 255, 0, 0.2) -68.25%,
+                rgba(158, 255, 0, 0) 32.16%
+              ),
+              linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0) 100%);
+            @media screen and (max-width: 1440px) {
+              width: 70px;
+              height: auto;
+              @media screen and (max-width: 1440px) {
+                width: 58px;
+                height: auto;
+              }
+            }
+            .choose_img {
+              width: 40px;
+              margin: 24px;
+              background: transparent;
+              @media screen and (max-width: 1440px) {
+                width: 30px;
+                margin: 20px;
+                height: auto;
+                @media screen and (max-width: 1440px) {
+                  width: 24px;
+                  height: auto;
+                  margin: 16px;
+                }
+              }
+            }
+          }
+          .choose_title {
+            color: #fff;
+            font-size: 26px;
+            @media screen and (max-width: 1440px) {
+              font-size: 20px;
+            }
+          }
+        }
+        .choose_text_block {
+          .choose_text {
+            color: #fff;
+            font-size: 20px;
+            @media screen and (max-width: 1440px) {
+              font-size: 16px;
+              @media screen and (max-width: 1440px) {
+                font-size: 14px;
+              }
+            }
+          }
         }
       }
     }
